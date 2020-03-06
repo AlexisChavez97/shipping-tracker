@@ -21,8 +21,10 @@ Bundler.require(*Rails.groups)
 
 module ShippingTracker
   class Application < Rails::Application
+    config.eager_load_paths << Rails.root.join('lib/tasks')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.shipping_services = config_for(:shipping_services)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

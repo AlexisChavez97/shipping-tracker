@@ -1,0 +1,26 @@
+default: &default
+  fedex:
+    credentials:
+      key: O21wEWKhdDn2SYyb
+      password: db0SYxXWWh0bgRSN7Ikg9Vunz 
+      account_number: 510087780
+      meter: 119009727
+      mode: test
+    delivery_statuses:
+      created: created
+      on_transit: on_transit
+      delivered: delivered
+      exception: exception
+  ups:
+    delivery_statuses:
+      created: created
+      on_transit: ongoing
+      delivered: completed
+      exception: exception
+    
+
+development:
+  <<: *default
+
+test:
+  <<: *default
